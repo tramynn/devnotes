@@ -37,7 +37,7 @@ async function registerUser(req, res) {
       last_name: newUser[0].last_name,
       username: newUser[0].username
     }
-
+    console.log(req.session.user);
     res.status(200).json(req.session.user)
   }
 }
