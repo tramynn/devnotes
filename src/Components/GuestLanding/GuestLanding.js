@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Login from "../Login/Login"
+import Login from "../Login/Login";
+import Register from "../Register/Register";
 
 class GuestLanding extends Component {
   constructor() {
@@ -12,7 +13,10 @@ class GuestLanding extends Component {
   render() {
     return (
       <div>
-      <h1>Guest Landing</h1>
+      <h1>Welcome to DevNotes</h1>
+      New User? Please register below!
+      <Register />
+      Welcome Back!
       <Login />
       </div>
     )
