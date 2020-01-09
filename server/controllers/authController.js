@@ -67,6 +67,7 @@ async function loginUser(req, res) {
         username: foundUser[0].username
       }
     }
+    console.log(req.session.user);
     // Send back an ok with the user on session
     res.status(200).json(req.session.user)
   }

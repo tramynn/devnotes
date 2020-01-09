@@ -30,7 +30,7 @@ class Register extends Component {
         <input name="first_name" placeholder="First Name" value={this.state.first_name} onChange={this.handleChange} />
         <input name="last_name" placeholder="Last Name" value={this.state.last_name} onChange={this.handleChange} />
         <input name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange} />
-        <input name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
+        <input name="password" type="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
         <button onClick={this.handleRegister}>Register</button>
       </div>
     )
