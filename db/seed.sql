@@ -39,3 +39,6 @@ WHERE post_id = $1;
 -- getAllPostsByCategoryName | inner join
 SELECT * FROM posts
 WHERE category_name = $1;
+-- Dummy Data
+INSERT INTO posts (category_name, title, content, date_published, user_id)
+VALUES ('Frontend', 'My First DevNote', 'CSS is so cool', CURRENT_TIMESTAMP, 1);

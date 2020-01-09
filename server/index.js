@@ -29,6 +29,7 @@ massive(CONNECTION_STRING).then(db => {
 
 // De-structured controllers
 const { user, registerUser, loginUser, logoutUser } = ac;
+const { allPosts, addPost, editPost, deletePost, allPostsByCategoryName } = pc;
 // Auth Endpoints
 app.get("/auth/user", user);
 app.post("/auth/register", registerUser);
@@ -36,11 +37,11 @@ app.post("/auth/login", loginUser);
 app.get("/auth/logout", logoutUser);
 
 // Posts Endpoints
-app.get("/api/posts");
-app.post("/api/posts");
-app.put("/api/posts/:post_id");
-app.delete("/api/posts/:post_id");
-app.get("/api/posts/:category_name")
+app.get("/api/posts", allPosts);
+app.post("/api/posts", addPost);
+app.put("/api/posts/:post_id", editPost);
+app.delete("/api/posts/:post_id", deletePost);
+app.get("/api/posts/:category_name", allPostsByCategoryName)
 
 app.listen(SERVER_PORT, () => {
   console.log(`SERVER PORT LISTENING ON: ${SERVER_PORT}`)
