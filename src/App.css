@@ -1,3 +1,14 @@
 .App {
   text-align: center;
 }
+
+li {
+  list-style-type: none;
+}
+
+.NavBar-container {
+  width: 100vw;
+  height: 10vh;
+  background-color: purple;
+  color: white;
+}

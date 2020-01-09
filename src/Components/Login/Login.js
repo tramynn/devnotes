@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginUser } from '../../reducks/reducers/authReducer'
+import { loginUser } from '../../reducks/reducers/authReducer';
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
   constructor() {
@@ -23,6 +24,13 @@ class Login extends Component {
   }
 
   render() {
+
+    if (this.props.user_id) {
+      return <Redirect to="/home" />
+    }
+
+    console.log(this.props.user_id)
+    
     return (
       <div>
         <input name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange} />
