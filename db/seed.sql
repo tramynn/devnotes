@@ -31,8 +31,9 @@ UPDATE posts
 SET
   title = $1,
   content = $2,
-  date_published = CURRENT_TIMESTAMP
-WHERE post_id = $3;
+  date_published = CURRENT_TIMESTAMP,
+  user_id = $3
+WHERE post_id = $4;
 -- deletePost
 DELETE FROM posts
 WHERE post_id = $1;
