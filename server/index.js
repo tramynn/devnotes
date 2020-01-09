@@ -28,6 +28,18 @@ massive(CONNECTION_STRING).then(db => {
 })
 
 // Auth Endpoints
+app.get("/auth/user");
+app.post("/auth/register");
+app.post("/auth/login");
+app.get("/auth/logout");
 
 // Posts Endpoints
+app.get("/api/posts");
+app.post("/api/posts");
+app.put("/api/posts/:post_id");
+app.delete("/api/posts/:post_id");
+app.get("/api/posts/:category_name")
 
+app.listen(SERVER_PORT, () => {
+  console.log(`SERVER PORT LISTENING ON: ${SERVER_PORT}`)
+})
