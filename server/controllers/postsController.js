@@ -34,11 +34,22 @@ async function editPost(req, res) {
 }
 
 async function deletePost(req, res) {
+  const post_id = +req.params.post_id;
+  const user_id = req.session.user.user_id;
+  const db = req.app.get("db");
 
+  const updatedPosts = await db.posts.deletePost([post_id, user_id])
+
+  res.status(200).json(updatedPosts);
 }
 
 async function allPostsByCategoryName(req, res) {
+  const category_name = req.params.category_name;
+  const db = req.app.get("db");
 
+  const posts = await db.posts.getAllPostsByCategoryName(category_name)
+
+  res.status(200).json(posts);
 }
 
 module.exports = {
