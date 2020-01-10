@@ -74,6 +74,31 @@ export default function reducer(state = initialState, action) {
         posts: payload.data
       }
     }
+    case `${EDIT_POST}_PENDING`: {
+      return {
+        ...state,
+        loading: true
+      }
+    }
+    case `${EDIT_POST}_FULFILLED`: {
+      return {
+        ...state,
+        posts: payload.data,
+        loading: false
+      }
+    }
+    case `${DELETE_POST}_PENDING`: {
+      return {
+        ...state,
+        loading: true
+      }
+    }
+    case `${DELETE_POST}_FULFILLED`: {
+      return {
+        ...state,
+        posts: payload.data
+      }
+    }
     default:
       return state;
   }
