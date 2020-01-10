@@ -29,7 +29,7 @@ async function editPost(req, res) {
     user_id,
     post_id
   ])
-
+  console.log(editedPost)
   res.status(200).json(editedPost);
 }
 
