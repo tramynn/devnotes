@@ -15,7 +15,7 @@ class PostCard extends Component {
     this.setState({ editPost: true })
   }
 
-  
+
 
   render() {
     return (
@@ -27,12 +27,8 @@ class PostCard extends Component {
           <li>Content: {this.props.content}</li>
         </ul>
         {this.props.user === this.props.user_id ?
-
           <div>
-
-            {
-
-            }
+            <EditPost />
           </div>
           : null}
       </div>
