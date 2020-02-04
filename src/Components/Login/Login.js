@@ -28,8 +28,6 @@ class Login extends Component {
     if (this.props.user_id) {
       return <Redirect to="/home" />
     }
-
-    console.log(this.props.user_id)
     
     return (
       <div>

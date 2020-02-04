@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import EditPost from "../EditPost/EditPost";
 import { connect } from 'react-redux';
 import { getSession } from '../../reducks/reducers/authReducer';
 
@@ -7,15 +6,8 @@ class PostCard extends Component {
   constructor() {
     super();
     this.state = {
-      editPost: false
     }
   }
-
-  handleOpenEditPost = () => {
-    this.setState({ editPost: true })
-  }
-
-
 
   render() {
     return (
@@ -26,11 +18,6 @@ class PostCard extends Component {
           <li>Title: {this.props.title}</li>
           <li>Content: {this.props.content}</li>
         </ul>
-        {this.props.user === this.props.user_id ?
-          <div>
-            <EditPost />
-          </div>
-          : null}
       </div>
     )
   }

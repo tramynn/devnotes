@@ -12,7 +12,7 @@ class EditPost extends Component {
   }
 
   componentDidMount() {
-    
+    this.props.editPost();
   }
 
   handleChange = e => {
@@ -31,12 +31,13 @@ class EditPost extends Component {
 
 
   render() {
+    // console.log(this.props.)
     return (
       <div>
         <h1>Edit DevNote</h1>
-        <input name="title" placeholder="Title" value={this.state.title} />
-        <input name="content" placeholder="Content" value={this.state.content} />
-        <button onClick={this.handleEditPost}>Save Changes</button>
+        <input name="title" placeholder="Title" value={this.state.title} onChange={this.handleChange} />
+        <input name="content" placeholder="Content" value={this.state.content} onChange={this.handleChange} />
+        <button onClick={() => this.handleEditPost(this.props.post_id)}>Save Changes</button>
       </div>
     )
   }

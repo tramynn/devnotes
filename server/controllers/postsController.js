@@ -2,7 +2,7 @@ async function allPosts(req, res) {
   const db = req.app.get("db");
   const posts = await db.posts.getAllPosts();
 
-  res.status(200).json(posts)
+  res.status(200).send(posts)
 }
 
 async function addPost(req, res) {
